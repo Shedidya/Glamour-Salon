@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Glamour Studio - Nail Salon 💅</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22><text y=%2226%22 font-size=%2226%22>💅🏽</text></svg>"/>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            margin: 0;
+            font-family: 'Pacifico', cursive;
+            background-color: #ffe6f0;
+            color: #333;
+        }
+        header {
+            background-color: #ffcce0;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 2.5em;
+            color: #b30059;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        nav li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav a {
+            color: #b30059;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            color: white;
+            background-color: #b30059;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        section {
+            padding: 50px 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        table {
+            width: 90%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #fff0f5;
+            border: 2px solid #ff99cc;
+        }
+        th, td {
+            padding: 15px;
+            border: 1px solid #ffb3d9;
+        }
+        th {
+            background-color: #ffcce0;
+            color: #b30059;
+        }
+        td img {
+            max-width: 120px;
+            border-radius: 10px;
+            border: 2px solid #ff99cc;
+        }
+        tr:hover {
+            background-color: #ffe6f0;
+        }
+        footer {
+            background-color: #ffcce0;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="logo">Glamour Studio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="nails.html">Nail Salon</a></li>
+                <li><a href="hair.html">Hair Salon</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="nails">
+        <h2>Nail Salon Services 💅</h2>
+        <p>Here are our nail styles and pricing:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nail Type</th>
+                    <th>Style</th>
+                    <th>Price</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Acrylic</td>
+                    <td>Square or Coffin</td>
+                    <td>$40</td>
+                    <td><img src="https://i.postimg.cc/w3ZtNQ6d/Acrylic.jpg" alt="Acrylic Nails"></td>
+                </tr>
+                <tr>
+                    <td>Gel</td>
+                    <td>Glossy Finish</td>
+                    <td>$35</td>
+                    <td><img src="https://i.postimg.cc/vgS43Wff/Gel.jpg" alt="Gel Nails"></td>
+                </tr>
+                <tr>
+                    <td>French Tips</td>
+                    <td>Classic Pink & White</td>
+                    <td>$30</td>
+                    <td><img src="https://i.postimg.cc/6yZ8f434/French.jpg" alt="French Tips"></td>
+                </tr>
+                <tr>
+                    <td>Custom Art</td>
+                    <td>Charms & Jewels</td>
+                    <td>From $50+</td>
+                    <td><img src="https://i.postimg.cc/QK9HPHJP/Custom-art.jpg" alt="Custom Nail Art"></td>
+                </tr>
+                <tr>
+                    <td>Press-ons</td>
+                    <td>Reusable & Cute</td>
+                    <td>$20</td>
+                    <td><img src="https://i.postimg.cc/s1vQ1NCc/Press.jpg" alt="Press-on Nails"></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>© 2025 Glamour Studio • Stay glam, babes 💅🏽</p>
+    </footer>
+
+    <script>
+        const sections = document.querySelectorAll("section");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
