@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Glamour Studio - Hair Salon 💇🏽‍♀️</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22><text y=%2226%22 font-size=%2226%22>💅🏽</text></svg>"/>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><text x=%220%22 y=%2228%22 font-size=%2228%22>💅🏽</text></svg>" type="image/svg+xml">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
     <style>
         html {
@@ -82,7 +82,116 @@
 
     <section id="hair">
         <h2>404 – Page Not Found</h2>
-        <p>Oops! This page doesn't exist.</p>
+        <p>Oops! This page doesn't exist. 💔</p>
+    </section>
+
+    <footer>
+        <p>© 2025 Glamour Studio • Stay glam, babes 💅🏽</p>
+    </footer>
+
+    <script>
+        const sections = document.querySelectorAll("section");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Glamour Studio - Hair Salon 💇🏽‍♀️</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><text x=%220%22 y=%2228%22 font-size=%2228%22>💅🏽</text></svg>" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            margin: 0;
+            font-family: 'Pacifico', cursive;
+            background-color: #ffe6f0;
+            color: #333;
+        }
+        header {
+            background-color: #ffcce0;
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 2.5em;
+            color: #b30059;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+        nav li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav a {
+            color: #b30059;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            color: white;
+            background-color: #b30059;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        section {
+            padding: 50px 20px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        footer {
+            background-color: #ffcce0;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="logo">Glamour Studio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="nails.html">Nail Salon</a></li>
+                <li><a href="hair.html">Hair Salon</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hair">
+        <h2>404 – Page Not Found</h2>
+        <p>Oops! This page doesn't exist. 💔</p>
     </section>
 
     <footer>
